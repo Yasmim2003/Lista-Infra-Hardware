@@ -17,13 +17,13 @@ acumula_x15:
     addi x11, x11, -1
     addi x15, x0, 0
     addi x16, x0, 0
-	add x12, x0, x10
+    add x12, x0, x10
     beq x0, x0, fat
 
 # decrementa valor fat (fat !)
 loop:
-	addi x5, x0, 0
-	addi x11, x11, -1
+    addi x5, x0, 0
+    addi x11, x11, -1
     add x15, x0, x16
     addi x12, x0, 0
     # beq x11, x6, sair
@@ -32,17 +32,17 @@ loop:
    
 fat:
     add x12, x12, x15
- 	addi x5, x5, 1
- 	beq x5, x11, acumula
+    addi x5, x5, 1
+    beq x5, x11, acumula
     blt x5, x11, fat
 
 # acumula fatorial
 acumula:
- 	 add x16, x16, x12
+     add x16, x16, x12
      blt x6, x11, loop
-	 beq x11, x6, gets
+     beq x11, x6, gets
 
-# convers�o hex in ASCII
+# conversao hex in ASCII
 sair: 
     addi x12, x0, 0
     addi x13, x0, 10
@@ -55,8 +55,8 @@ output:
     addi x12, x12, 48
     addi x15, x15, 48
     sb x12, 1024(x0)
-	sb x15, 1024(x0)
-	halt 
+    sb x15, 1024(x0)
+    halt 
 
 
  
